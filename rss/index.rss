@@ -1,4 +1,41 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>The Abyss</title><description>Coding&amp;chill</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 13 Nov 2016 15:41:59 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Beyond Tellerland, Berlin 2016</title><description>&lt;p&gt;Me and my lovely coning partner were lucky enough to get free tickets for this year &lt;a href="https://beyondtellerrand.com/events/berlin-2016/speakers"&gt;Berlin BTconf&lt;/a&gt;. In fact we were so lucky that this is our &lt;strong&gt;3rd&lt;/strong&gt; conference this autumn.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>The Abyss</title><description>Coding&amp;chill</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 17 Dec 2016 22:11:19 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Outreachy: Week 1&amp;2</title><description>&lt;p&gt;It has been 2 weeks since the beginning of Outreachy and I've started working with people of Mozilla's WebExtensions. So far it was just awesomesause. So here is a story of how it came to be.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://wiki.gnome.org/Outreachy/SpreadTheWord?action=AttachFile&amp;amp;do=get&amp;amp;target=outreachy-logo.png" alt="dfsdsd"&gt;&lt;/p&gt;
+
+&lt;h3 id="whatisoutreachyanyway"&gt;What is Outreachy, anyway?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://gnome.org/outreachy/"&gt;Outreachy&lt;/a&gt; is a scholarship program for underrepresented groups (LGBTQ+ people,&lt;/p&gt;</description><link>http://localhost:2368/outreachy-week-1-2/</link><guid isPermaLink="false">65b6a0b2-116b-49e9-80bf-d84dfe3be5f8</guid><category>javascript</category><category>outreachy</category><dc:creator>Elvina Valieva</dc:creator><pubDate>Sat, 17 Dec 2016 20:26:23 GMT</pubDate><media:content url="http://localhost:2368/content/images/2016/12/outreachy-logo.png" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2016/12/outreachy-logo.png" alt="Outreachy: Week 1&amp;2"&gt;&lt;p&gt;It has been 2 weeks since the beginning of Outreachy and I've started working with people of Mozilla's WebExtensions. So far it was just awesomesause. So here is a story of how it came to be.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://wiki.gnome.org/Outreachy/SpreadTheWord?action=AttachFile&amp;amp;do=get&amp;amp;target=outreachy-logo.png" alt="Outreachy: Week 1&amp;2"&gt;&lt;/p&gt;
+
+&lt;h3 id="whatisoutreachyanyway"&gt;What is Outreachy, anyway?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://gnome.org/outreachy/"&gt;Outreachy&lt;/a&gt; is a scholarship program for underrepresented groups (LGBTQ+ people, PoC and women) in open source software development. It is organised by nice people of &lt;a href="https://www.gnome.org/foundation/"&gt;GNOME Foundation&lt;/a&gt;, &lt;a href="https://sfconservancy.org"&gt;Software Freedom Conservancy&lt;/a&gt; and &lt;a href="https://www.redhat.com"&gt;Red Hat&lt;/a&gt;. &lt;a href="https://gnome.org/outreachy/#sponsors"&gt;Many-many cool companies&lt;/a&gt; support the program and work with the students.&lt;/p&gt;
+
+&lt;h3 id="whyiveapplied"&gt;Why I've applied&lt;/h3&gt;
+
+&lt;p&gt;To be completely honest I feel very privileged to be part of Outreachy and in general. I am 'white passing' person living in Europe, who already had received some perks from people in Tech who want to promote diversity. I am very grateful for this opportunity to work side-by-side with very experienced and accomplished developers. Learn from them, learn from my own mistakes, and most importantly write a lot of code. I hope this code will not only teach me a laundry list of things but will also allow other people to see what I am capable of. My dream is to continue writing open source code and contribute to project I think are important and to collaborate with people who share my values. And this three months I am going to do exactly that!&lt;/p&gt;
+
+&lt;p&gt;I had wonderful experience with my initial commits, working with Kumar, who has been the supportive and helpful, despite my clumsy first pull request. I recommend anyone eligible to try their hand and contribute to the project they like the most just for fun and see where it goes from there. It may be scary (less scary if you look around the repo and see how maintainers treat contributors), but it is worth it 100%. &lt;/p&gt;
+
+&lt;h3 id="oksowhatiswebextensions"&gt;Ok, so what is WebExtensions?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/What_are_WebExtensions"&gt;WebExtensions or web-ext&lt;/a&gt; is Mozilla's project to create a cross-browser system for add-on development. They try to make developer's life easier allowing to adapt add-on to Edge, Chrome, Opera and Firefox (naturally) with minimal changes. Lately I've been learning more and more about how chaotic and sometimes unreasonable the word of browser compatibility and specs is. Web-ext is an honest attempt to make all this suck less for add-on developers. This is a great and dynamic project, and they will be very happy to have &lt;a href="https://github.com/mozilla/web-ext"&gt;new contributors&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mozilla also gives away laptops to their students and in the light of some burned logic boards and being pretty broke this was most welcomed and unexpected. I should get me some stickers!&lt;/p&gt;
+
+&lt;h3 id="andwhatareyouworkingonnow"&gt;And what are you working on now?&lt;/h3&gt;
+
+&lt;p&gt;I've been working on two issues and started writing my own add-on! I work closely with my mentor Luca, who so supportive and accepting. He has been generous with his time and always provides sources when he thinks there is something for me to look into (&amp;lt;3). It has been terrifying at times, and incredibly fun.&lt;/p&gt;
+
+&lt;p&gt;Ever since I've got the news that I am participating I've been trying on catching up with node.js, flow type etc. And there is still a lot too learn for me. In fact just after 2 weeks I can see that there are some things I am taking for granted that before where not part of my tool belt. And it is such a pleasure to work with well maintained code.&lt;/p&gt;
+
+&lt;h3 id="whatamidoingnext"&gt;What am I doing next?&lt;/h3&gt;
+
+&lt;p&gt;I am almost done with me issues and have started eyeing my next mission. I am also working on the add-on (I should really get on with that) which has already helped a lot to understand what I'm doing and how I should be doing it.&lt;/p&gt;
+
+&lt;p&gt;I have been and want to continue doing some learning on the side, and thanks to &lt;a href="http://localhost:2368/outreachy-week-1-2/frecodecamp.com"&gt;freeCode Camp&lt;/a&gt;. I have a chance to work on my algorithms. &lt;br&gt;
+I've also received my &lt;a href="https://events.ccc.de/congress/2016/wiki/Main_Page"&gt;33C3&lt;/a&gt; tickets, so there is something to look for. Whatever happens these are going to be very interesting 3 months.&lt;/p&gt;</content:encoded></item><item><title>Beyond Tellerland, Berlin 2016</title><description>&lt;p&gt;Me and my lovely coning partner were lucky enough to get free tickets for this year &lt;a href="https://beyondtellerrand.com/events/berlin-2016/speakers"&gt;Berlin BTconf&lt;/a&gt;. In fact we were so lucky that this is our &lt;strong&gt;3rd&lt;/strong&gt; conference this autumn.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://localhost:2368/content/images/2016/11/FullSizeRender.jpg" alt="Don't Panic"&gt;&lt;/p&gt;
 
