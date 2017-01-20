@@ -1,4 +1,163 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>The Abyss</title><description>Coding&amp;chill</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 01 Jan 2017 21:42:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Notes from 33C3</title><description>&lt;h3 id="incaseyoudontknow"&gt;In case you don't know&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>The Abyss</title><description>Coding&amp;chill</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 20 Jan 2017 14:33:52 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Go with a Flow</title><description>&lt;p&gt;You've heard about Flow, but not sure what it is, how to use it and whether it's worth it? I had to fins answers to this questions so hopefully you don't have to. I've started with Flow as a contributor to already an established project with extensive (and ever growing)&lt;/p&gt;</description><link>http://localhost:2368/go-with-a-flow/</link><guid isPermaLink="false">75e9ed39-eef9-4b2a-8f49-c4b78014c47b</guid><dc:creator>Elvina Valieva</dc:creator><pubDate>Wed, 18 Jan 2017 21:26:09 GMT</pubDate><content:encoded>&lt;p&gt;You've heard about Flow, but not sure what it is, how to use it and whether it's worth it? I had to fins answers to this questions so hopefully you don't have to. I've started with Flow as a contributor to already an established project with extensive (and ever growing) Flow coverage. It was a stark contrast to how JavaScript's usual treatment of types, in fact it seemed formalistic and unnecessarily specific at times. However, just like with writing tests, well type-annotated code will take care of itself and let you know about a problem &lt;em&gt;before&lt;/em&gt; things went wrong.&lt;/p&gt;
+
+&lt;h3 id="whyuseflow"&gt;Why use Flow?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://flowtype.org"&gt;Flow&lt;/a&gt; allows strict typing in JavaScript. That is really not at all helpful, so I'll try again. Lets look at the following code. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var foo = 0; //here is a number  
+var bar = '0'; //here is a string  
+foo == bar //true but why?  
+foo === bar //false as it should be  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So why exactly &lt;code&gt;==&lt;/code&gt; equates values of two very different types? It happens because of a concept called &lt;em&gt;coercion&lt;/em&gt;. When using &lt;code&gt;==&lt;/code&gt; we ask JS to compare values but not type so types are converted in case they don't match, &lt;code&gt;===&lt;/code&gt; on the other hand compares both values and types. That's what coercion is. Of course we may want values to be converted into different type, that is a so-called explicit coercion.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var wasNumber = 42;  
+var nowString = number.toString();  
+nowString //'42'  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let's take a look at implicit coercion in action.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var x = 2; //totally a number  
+var y = '2'; //not a number  
+van z = x*y;  
+z // prints 4... wait what?  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So this kind of things can sneak up on you and they are a real pain to debug. Javascript is &lt;em&gt;dynamically typed&lt;/em&gt; language which we can define as a language that will let you know that &lt;code&gt;'X' is not a function&lt;/code&gt; only when the program is running (or &lt;em&gt;runtime&lt;/em&gt;). But this is not true for every programming language. Some of the languages check type &lt;em&gt;statically&lt;/em&gt; or during &lt;em&gt;compile time&lt;/em&gt;, which means before the program is run.&lt;/p&gt;
+
+&lt;p&gt;So Flow exists to allow static type checking in Javascript, it checks type as you work on the project. The least invasive way to use Flow is to allow Flow to use &lt;em&gt;type inference&lt;/em&gt; (automatic deduction of data type based on language syntax etc). You can also choose to be very specific about each variable, function argument and returned type. This of course depends on the project and your own approach to development. &lt;/p&gt;
+
+&lt;p&gt;Static type checking is not inherently better than dynamic one, in fact there are a lot of opinions about those two.  You may want to read &lt;a href="https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-2-part-3-be699ee7be60#.54u3hgr3d"&gt;this post&lt;/a&gt; if you still not sure whether you need to learn Flow.&lt;/p&gt;
+
+&lt;h3 id="howtostart"&gt;How to start?&lt;/h3&gt;
+
+&lt;p&gt;Like this &lt;code&gt;\\@flow&lt;/code&gt;. Just add this comment at the top of the file after &lt;a href="https://flowtype.org/docs/getting-started.html#_"&gt;installing&lt;/a&gt; and that's it. Use &lt;code&gt;/* @flow weak */&lt;/code&gt; if you only want to be notified about mismatch and don't want to work on type annotation or if you have existing code base, which you want to gradually refactor using Flow. &lt;br&gt;
+You can decide between periodically running &lt;code&gt;flow check&lt;/code&gt; from console and starting a &lt;a href="https://flowtype.org/docs/new-project.html#using-the-flow-server"&gt;server&lt;/a&gt;, which will watch changes in your source files and will detect any errors and inconsistent type usage.&lt;/p&gt;
+
+&lt;h3 id="syntaxintro"&gt;Syntax Intro&lt;/h3&gt;
+
+&lt;p&gt;While the flexibility is a strength of Flow, one of it's most obvious weaknesses is far from ideal docs. I refer to this detailed &lt;a href="https://medium.freecodecamp.com/why-use-static-types-in-javascript-part-1-8382da1e0adb#.ax9so8iyn"&gt;post&lt;/a&gt; in case you want an in depth information about flow syntax. For now let's start with js primitive types using a cat as an example.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var name: string = 'Fluffy';  
+var age: number = 3;  
+var likesDogs: boolean = false;  
+var currentThoughts: void = undefined;  
+var likesRoomba: null = null;  
+var foodPreferences: any = 'tuna';  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;First thing you may notice is that despite &lt;code&gt;undefined === null&lt;/code&gt; Flow separates those two types. Apart from that this syntax seems easily readable. &lt;code&gt;any&lt;/code&gt; type basiacally means Flow will skip checking this variable, which may be a very good thing or a very bad thing, so it should be used with caution. &lt;br&gt;
+Now let's move to arrays, which flows describes as types of array elements like &lt;code&gt;Array&amp;lt;type&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var favouriteToys: Array&amp;lt;string&amp;gt; = ['mouse', 'birdie', 'socks', 'human toes'];  
+//alternative syntax
+var favouriteStarTrekTNGCharacters: string[] = ['Spot'];  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Object types can be defined both very loosely and very detailed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;vat obj: Object = {};  
+let cat: {name: string, age: number, likesDogs: boolean} = {name: 'Fluffy', age: 3, likesDogs: false};  
+//object can be a registry of all cats in the neighbourhood
+let catRating: {[name:string]: number} = {};  
+catRating["Fluffy"] = 10;  
+//Fluffy is a solid ten
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The most interesting and complicated syntax concerns functions. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var aFunction: Function = () =&amp;gt; {console.log('called');};  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Function is of course a type in Flow, but Flow is smart enough to find out what is a function by itself. You can annotate function very specifically, including arguments and returning type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;function sum(a: number, b: number): number {  
+  return a+b;
+}
+
+async function asyncEquate(  
+  remoteNumber: Promise&amp;lt;number[]&amp;gt;,
+  localNumber: number,
+): Promise&amp;lt;boolean&amp;gt; {
+  var firstNumber = await remoteNumber;
+  return firstNumber === localNumber;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Flow allows you to define your own types, and it is the most powerful feature, which can become a way for contributors to easily grasp how things work in you project.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;type Cat = {  
+  name: string,
+  age: number,
+  likesDogs: boolean,
+};
+
+function addCat(  
+  {
+   name, age, likesDogs = false,
+  }: Cat
+): void {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example function only accepts this type as an argument and one of the parameters has a default value. Types can be strict this way only object structured certain way would be accepted&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;type Cat = {|  
+  name: string,
+  age: number,
+  likesDogs: boolean,
+|};
+//note the use of '|'
+
+addCat({  
+  name: 'Spot',
+  age: 5,
+  likesDogs: true,
+  furColor: 'black and white',
+});
+//This will cause an error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Last cool thing you need to know is how to make Flow more flexible with &lt;strong&gt;maybe&lt;/strong&gt; types and &lt;strong&gt;disjointed unions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;type Cat = {|  
+  name: ?string, //only house cats have names
+  age: ?number, //cats rarely remember their birthdays
+  likesDogs: boolean,
+|};
+
+addCat({  
+  name: null,
+  age: null,
+  likesDogs: false,
+});
+//maybe values can be either a declared type or a null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now lets make &lt;code&gt;addCat&lt;/code&gt; accept more than one type as an argument.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-javascript"&gt;function addCat(  
+  {
+   name, age, likesDogs = false,
+  }: Cat | Array&amp;lt;Cat&amp;gt; 
+): void {
+  ...
+}
+
+addCat(  
+  [{
+    name: null, age: null, likesDogs: false,
+  }, {
+    name: 'Sylvester', age: 1, likesDogs: true,
+  }]
+);
+//'|' (pipe) means more than one type is viable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can find more detailed examples for classes, mixed types etc in the &lt;a href="https://flowtype.org/docs/quick-reference.html"&gt;docs&lt;/a&gt;. That's it for now, next I am going to explain how to check how read Flow error and how and why to increase Flow coverage in your project.&lt;/p&gt;</content:encoded></item><item><title>Notes from 33C3</title><description>&lt;h3 id="incaseyoudontknow"&gt;In case you don't know&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href="https://www.ccc.de"&gt;Chaos Computer Congress&lt;/a&gt; is the biggest thing. It's THE THING. In fact there are two types of people in the world: those who are planning to go to CCC and those who haven't heard of it yet. That time of the year between Christmas and&lt;/p&gt;</description><link>http://localhost:2368/notes-from-33c3/</link><guid isPermaLink="false">cc538fb3-10bc-4e3f-9f57-cdba0083566a</guid><category>conferences</category><dc:creator>Elvina Valieva</dc:creator><pubDate>Sun, 01 Jan 2017 19:24:04 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/01/33C3-hello.png" medium="image"/><content:encoded>&lt;h3 id="incaseyoudontknow"&gt;In case you don't know&lt;/h3&gt;
 
